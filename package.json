@@ -43,7 +43,8 @@
     "test-csharp": "cd src.csharp && dotnet test",
     "test-csharp-ci": "cd src.csharp && dotnet test",
     "test-kotlin": "cd src.kotlin/alphaTab && gradlew jvmTest",
-    "test-kotlin-ci": "cd src.kotlin/alphaTab && gradlew jvmTest"
+    "test-kotlin-ci": "cd src.kotlin/alphaTab && gradlew jvmTest",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^19.0.0",
@@ -76,7 +77,8 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^9.0.0",
     "ttypescript": "^1.5.12",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "url": "^0.11.0"
   },
   "files": [
     "/dist/alphaTab.js",

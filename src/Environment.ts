@@ -129,8 +129,8 @@ export class Environment {
             }
             .at-surface-svg text {
                 dominant-baseline: central;
-            }             
-            .at {
+            }
+            .at, .at text {
                  font-family: 'alphaTab';
                  speak: none;
                  font-style: normal;
@@ -232,7 +232,8 @@ export class Environment {
         if (!('document' in Environment.globalThis)) {
             return null;
         }
-        return (document.currentScript as HTMLScriptElement).src;
+        // @ts-ignore
+        return (document.currentScript as HTMLScriptElement)?.src || import.meta?.url;
     }
 
     /**

@@ -43,7 +43,12 @@ module.exports = [
                     },
                     data() {
                         let buildNumber = process.env.GITHUB_RUN_NUMBER || 0;
-                        let gitBranch = branch.sync();
+                        let gitBranch = 'unknown';
+                        try {
+                            gitBranch = branch.sync();
+                        } catch (e) {
+                            // pass
+                        }
                         return {
                             branch: gitBranch,
                             build: buildNumber
@@ -67,7 +72,7 @@ module.exports = [
             isWatch && serve({
                 open: true,
                 openPage: '/playground/control.html',
-                contentBase: '', 
+                contentBase: '',
                 port: 8080
             })
         ]
